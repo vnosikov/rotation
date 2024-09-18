@@ -5,3 +5,10 @@
     margin-right: 10px;
   }
 }
+
+.panel {
+  display: grid;
+  grid-template-rows: repeat(5, auto);
+  grid-template-columns: auto auto;
+  grid-auto-flow: column;
+}

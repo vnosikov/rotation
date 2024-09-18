@@ -66,3 +66,60 @@
     transform: rotate(360deg) scale(1,1);
   }
 }
+
+.shadow {
+  width: 150px;
+  height: 50px;
+
+  position: absolute;
+  border-radius: 10px;
+}
+
+.shadow1 {
+  background-color: lime;
+  top: 2px;
+  left: 2px;
+  overflow: hidden;
+}
+
+.shadow2 {
+  background-color: plum;
+  animation: colorgame var(--animation-time) infinite;
+}
+
+@keyframes colorgame {
+  0% {
+    width: 0px;
+    height: 0px;
+    left: 148px;
+  }
+  25% {
+    width: 2px;
+    height: 50px;
+    left: 148px;
+  }
+  50% {
+    width: 150px;
+    height: 50px;
+    left: 0px;
+  }
+  75% {
+    width: 0px;
+    height: 50px;
+    left: 0px;
+  }
+  100% {
+    width: 0px;
+    height: 0px;
+    left: 0px;
+  }
+}
+
+.text {
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  position: absolute;
+  left: 20%;
+  top: 20%;
+}
