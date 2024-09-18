@@ -3,14 +3,15 @@ import Rotator from './Rotator'
 import './App.css'
 
 const App = () => {
-  const [showBg, setShowBg] = useState(true)
+  const [showBg, setShowBg] = useState(false)
   const [bgOpacity, setBgOpacity] = useState(0.3)
   const [xScaleFactor, setXScaleFactor] = useState(0.6)
   const [yScaleFactor, setYScaleFactor] = useState(1)
   const [time, setTime] = useState(7)
 
-  const [showShadow, setShowShadow] = useState(true)
+  const [showShadow, setShowShadow] = useState(false)
   const [showOnlyShadow, setShowOnlyShadow] = useState(false)
+  const [hideEraser, setHideEraser] = useState(false)
 
 
   return (
@@ -44,6 +45,10 @@ const App = () => {
           <span>Скрыть всё кроме "тени"</span>
           <input type="checkbox" checked={showOnlyShadow} onChange={() => { setShowOnlyShadow(v => !v)}}/>
         </div>
+        <div className="field">
+          <span>Скрыть "вырез"</span>
+          <input type="checkbox" checked={hideEraser} onChange={() => { setHideEraser(v => !v)}}/>
+        </div>
       </div>
       <div className="field">Кликните ниже, чтобы запустить/остановить анимацию</div>
       <Rotator
@@ -54,6 +59,7 @@ const App = () => {
          time={time}
          showShadow={showShadow}
          showOnlyShadow={showOnlyShadow}
+         hideEraser={hideEraser}
       />
     </div>
   )

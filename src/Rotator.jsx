@@ -8,7 +8,8 @@ function Rotator({
   yScaleFactor,
   time,
   showShadow,
-  showOnlyShadow
+  showOnlyShadow,
+  hideEraser,
 }) {
   const [animate, setAnimate] = useState(true)
   const toggle = () => { setAnimate(v => !v) }
@@ -35,6 +36,7 @@ function Rotator({
             <div className="unblurdiv">
               <div className={`overlay ${animateClass}`} />
             </div>
+            {!hideEraser && <div className="eraser"></div>}
             <span className="text">ПРИВЕТ</span>
           </>
         )}
