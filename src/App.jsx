@@ -13,7 +13,7 @@ const App = () => {
       <div>
         <div className="field">
           <span>Показать задник</span>
-          <input type="checkbox" value={showBg} onChange={() => { setShowBg(v => !v)}}/>
+          <input type="checkbox" checked={showBg} onChange={() => { setShowBg(v => !v)}}/>
         </div>
         <div className="field">
           <span>Размытость задника</span>
@@ -32,7 +32,14 @@ const App = () => {
           <input type="number" step={1} value={time} onChange={e => { setTime(e.target.value)}} />
         </div>
       </div>
-      <Rotator />
+      <div className="field">Кликните ниже, чтобы запустить/остановить анимацию</div>
+      <Rotator
+         showBg={showBg}
+         bgOpacity={bgOpacity}
+         xScaleFactor={xScaleFactor}
+         yScaleFactor={yScaleFactor}
+         time={time}
+      />
     </div>
   )
 }
