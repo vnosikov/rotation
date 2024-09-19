@@ -5,8 +5,8 @@
 }
 
 .container {
-  width: 150px;
-  height: 50px;
+  width: var(--buttonWidth);
+  height: var(--buttonHeight);
   position: relative;
 }
 
@@ -22,21 +22,15 @@
 
 .overlay {
   position: absolute;
-  background: linear-gradient(
-    45deg,
-    blue 0%,
-    blue 20%,
-    DeepPink 45%,
-    deeppink 55%,
-    orange 80%,
-    orange 100%
-  );
 
-  width: 300px;
-  height: 200px;
+  background: url('./assets/photo_5431654005072846404_x.jpg');
+  background-size: cover;
 
-  left: -75px;
-  top: -75px;
+  width: var(--imageWidth);
+  height: var(--imageHeight);
+
+  left: calc((var(--buttonWidth) - var(--imageWidth)) / 2);
+  top: calc((var(--buttonHeight) - var(--imageHeight)) / 2);
 
   animation: rotate var(--animation-time) linear infinite;
 }
@@ -68,8 +62,8 @@
 }
 
 .shadow {
-  width: 150px;
-  height: 50px;
+  width: var(--buttonWidth);
+  height: var(--buttonHeight);
 
   position: absolute;
   border-radius: 10px;
@@ -91,21 +85,21 @@
   0% {
     width: 0px;
     height: 0px;
-    left: 148px;
+    left: calc(var(--buttonWidth) - 2px);
   }
   12% {
     width: 2px;
-    height: 50px;
-    left: 148px;
+    height: var(--buttonHeight);
+    left: calc(var(--buttonWidth) - 2px);
   }
   50% {
-    width: 150px;
-    height: 50px;
+    width: var(--buttonWidth);
+    height: var(--buttonHeight);
     left: 0px;
   }
   88% {
     width: 0px;
-    height: 50px;
+    height: var(--buttonHeight);
     left: 0px;
   }
   100% {

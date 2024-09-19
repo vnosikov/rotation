@@ -10,6 +10,11 @@ function Rotator({
   showShadow,
   showOnlyShadow,
   hideEraser,
+  imageWidth,
+  imageHeight,
+  buttonWidth,
+  buttonHeight,
+  hideText
 }) {
   const [animate, setAnimate] = useState(true)
   const toggle = () => { setAnimate(v => !v) }
@@ -20,7 +25,11 @@ function Rotator({
     '--opacity': !showBg ? 0 : bgOpacity,
     '--xScale': xScaleFactor,
     '--yScale': yScaleFactor,
-    '--animation-time': `${time}s`
+    '--animation-time': `${time}s`,
+    '--imageWidth': `${imageWidth}px`,
+    '--imageHeight': `${imageHeight}px`,
+    '--buttonWidth': `${buttonWidth}px`,
+    '--buttonHeight': `${buttonHeight}px`
   }
   return (
     <div style={style} className="wrapper" onClick={toggle}>
@@ -37,7 +46,7 @@ function Rotator({
               <div className={`overlay ${animateClass}`} />
             </div>
             {!hideEraser && <div className="eraser"></div>}
-            <span className="text">ПРИВЕТ</span>
+            {!hideText && <span className="text">ПРИВЕТ</span>}
           </>
         )}
       </div>
